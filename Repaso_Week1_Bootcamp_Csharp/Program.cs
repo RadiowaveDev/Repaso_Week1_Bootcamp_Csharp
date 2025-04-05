@@ -107,11 +107,13 @@
                     Console.WriteLine("Ingrese el valor de la altura");
                     int altura = Convert.ToInt32(Console.ReadLine());
                     area = Base * altura;
+                    Console.WriteLine("El area del rectangulo es "+area);
                     break;
                 case "circulo":
                     Console.WriteLine("Ingrese el valor del radio: ");
                     decimal radio = Convert.ToInt32(Console.ReadLine());
                     area =  pi* radio * radio;
+                    Console.WriteLine("El area del circulo es " + area);
                     break;
                 default:
                     Console.WriteLine("Figura geometrica inesperada");
