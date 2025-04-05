@@ -64,7 +64,33 @@
             {
                 Console.WriteLine($"El numero {number} es impar");
             }
-            
+
+
+            /*Escribe un programa en C# para hallar el mayor de 3 numeros*/
+            Console.WriteLine("Ingrese el primer numero: ");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el segundo numero: ");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el tercer numero: ");
+            int num3 = Convert.ToInt32(Console.ReadLine());
+
+            int mayor = 0;
+            if (num2 > num1)
+            {
+                mayor = num2;
+                if (num3 > num2)
+                {
+                    mayor = num3;
+                }
+            }
+            else if (num1 > num2){
+                mayor = num1;
+                if (num3 > num1) ;
+                {
+                    mayor = num3;
+                }
+            }
+
         }
     }
 }
