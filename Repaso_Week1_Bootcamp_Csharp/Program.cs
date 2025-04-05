@@ -6,10 +6,8 @@
         {
             Random random = new Random();
             int edad = random.Next(1,65);
-            double numdecimal = 11.3;
             char genero = 'M';
             bool isPeruvian = true;
-            string name = "Umbrella";
 
             if(edad >= 18 && genero.Equals('M') && isPeruvian)
             {
@@ -22,29 +20,29 @@
                 Console.WriteLine("No soy un hombre peruano mayor de edad");
             }
 
-            string weekDay = "lunes";
+            int weekDay = random.Next(1,8);
 
             switch (weekDay)
             {
-                case "lunes":
-                    Console.WriteLine($"Hoy es lunes");
+                case 1:
+                    Console.WriteLine("Hoy es lunes");
                     break;
-                case "martes":
+                case 2:
                     Console.WriteLine("Hoy es martes");
                     break;
-                case "miercoles":
+                case 3:
                     Console.WriteLine("Hoy es miercoles");
                     break;
-                case "jueves":
+                case 4:
                     Console.WriteLine("Hoy es jueves");
                     break;
-                case "viernes":
+                case 5:
                     Console.WriteLine("Hoy es viernes");
                     break;
-                case "sabado":
+                case 6:
                     Console.WriteLine("Hoy es sabado");
                     break;
-                case "domingo":
+                case 7:
                     Console.WriteLine("Hoy es domingo");
                     break;
                 default:
