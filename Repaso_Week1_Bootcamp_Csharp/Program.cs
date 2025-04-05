@@ -91,6 +91,7 @@
                     mayor = num3;
                 }
             }
+            Console.WriteLine($"El mayor de los tres numeros es {mayor}");
 
             /* Hallar el area del rectangulo y del circulo*/
             Console.WriteLine("");
@@ -100,7 +101,7 @@
             decimal pi = 3.1416m;
             switch (figura)
             {
-                case "cuadrado":
+                case "rectangulo":
                     Console.WriteLine("Ingrese el valor de la base: ");
                     int Base = Convert.ToInt32(Console.ReadLine()); 
                     Console.WriteLine("Ingrese el valor de la altura");
