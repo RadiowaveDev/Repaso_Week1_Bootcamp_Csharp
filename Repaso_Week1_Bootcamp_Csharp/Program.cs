@@ -1,4 +1,6 @@
-﻿namespace Repaso_Week1_Bootcamp_Csharp
+﻿using System.Drawing;
+
+namespace Repaso_Week1_Bootcamp_Csharp
 {
     internal class Program
     {
@@ -65,8 +67,8 @@
                 Console.WriteLine($"El numero {number} es impar");
             }
 
-
             /*Escribe un programa en C# para hallar el mayor de 3 numeros*/
+            Console.WriteLine("");
             Console.WriteLine("Ingrese el primer numero: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Ingrese el segundo numero: ");
@@ -83,12 +85,38 @@
                     mayor = num3;
                 }
             }
-            else if (num1 > num2){
+            else if (num1 > num2)
+            {
                 mayor = num1;
-                if (num3 > num1) ;
+                if (num3 > num1)
                 {
                     mayor = num3;
                 }
+            }
+
+            /* Hallar el area del rectangulo y del circulo*/
+            Console.WriteLine("");
+            Console.WriteLine("Ingrese el tipo de figura (rectangulo, circulo): ");
+            string figura = Console.ReadLine();
+            decimal area = 0;
+            decimal pi = 3.1416m;
+            switch (figura)
+            {
+                case "cuadrado":
+                    Console.WriteLine("Ingrese el valor de la base: ");
+                    int Base = Convert.ToInt32(Console.ReadLine()); 
+                    Console.WriteLine("Ingrese el valor de la altura");
+                    int altura = Convert.ToInt32(Console.ReadLine());
+                    area = Base * altura;
+                    break;
+                case "circulo":
+                    Console.WriteLine("Ingrese el valor del radio: ");
+                    decimal radio = Convert.ToInt32(Console.ReadLine());
+                    area =  pi* radio * radio;
+                    break;
+                default:
+                    Console.WriteLine("Figura geometrica inesperada");
+                    break;
             }
 
         }
