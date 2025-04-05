@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace Repaso_Week1_Bootcamp_Csharp
+﻿namespace Repaso_Week1_Bootcamp_Csharp
 {
     internal class Program
     {
