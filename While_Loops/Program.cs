@@ -40,36 +40,58 @@
                 Console.WriteLine();
                 inicio++;
             }
-
-            //Ejercicio de While loop 
+  
+            //Patrones en while
+            Console.WriteLine("");
+            Console.WriteLine("Patron superior *, inferior del 1 al 5 con bucle while");
             /* 1****
                12***
                123**
                1234*
                12345
              */
-            Console.WriteLine("");
-            Console.WriteLine("Patron numeros y asteriscos");
+            int dimension = 5;
             int i = 1;
-            while (i <= 5)
+            while (i<=dimension) 
             {
                 int j = 1;
-                while (j <= 5)
+                while (j<=dimension)
                 {
-                    if (i < j)
+                    if (i<j)
                     {
-                        Console.Write("*");
+                        Console.Write("* ");
                     }
                     else
                     {
-                        Console.Write(i);
+                        Console.Write(j + " ");
                     }
-
-                        j++;
+                    j++;
                 }
-                Console.WriteLine();
+                Console.WriteLine("");
                 i++;
             }
+
+            //Patrones en For
+            Console.WriteLine("");
+            Console.WriteLine("Patron triangulo decreciente con bucle for");
+            /* ****1
+               ***12
+               **123
+               *1234
+               12345
+             */
+            for (int a = 1; a <= dimension; a++)
+            {
+                for(int b = 1; b <= dimension; b++)
+                {
+                    if(a>=b)
+                    {
+                        Console.Write(b + " ");
+                    }
+                }
+                Console.WriteLine("");
+            }
+            
         }
     }
 }
