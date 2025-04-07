@@ -74,17 +74,17 @@
             //Patrones en For
             Console.WriteLine("");
             Console.WriteLine("Patron triangulo decreciente con bucle for");
-            /* ****1
-               ***12
-               **123
-               *1234
+            /* 1
+               12
+               123
+               1234
                12345
              */
             for (int a = 1; a <= dimension; a++)
             {
                 for(int b = 1; b <= dimension; b++)
                 {
-                    if(a>=b)
+                    if(a>b)
                     {
                         Console.Write(b + " ");
                     }
