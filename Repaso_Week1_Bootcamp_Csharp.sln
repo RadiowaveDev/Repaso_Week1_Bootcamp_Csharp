@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week2_Collections", "Week2_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week2_Collections_List", "Week2_Collections_List\Week2_Collections_List.csproj", "{F262DAD2-9A9B-4B26-8514-3C4211B58D9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week2_Collections_Dictionary", "Week2_Collections_Dictionary\Week2_Collections_Dictionary.csproj", "{17317388-549F-4EC5-B11C-24FD9A2922E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{F262DAD2-9A9B-4B26-8514-3C4211B58D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F262DAD2-9A9B-4B26-8514-3C4211B58D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F262DAD2-9A9B-4B26-8514-3C4211B58D9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17317388-549F-4EC5-B11C-24FD9A2922E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17317388-549F-4EC5-B11C-24FD9A2922E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17317388-549F-4EC5-B11C-24FD9A2922E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17317388-549F-4EC5-B11C-24FD9A2922E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
