@@ -1,4 +1,6 @@
-﻿namespace Week2_Arrays_Onedimension
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Week2_Arrays_Onedimension
 {
     internal class Program
     {
@@ -109,10 +111,110 @@
              F2:    Encontrar la calificacion mas alta y mas baja
              F3:    Calcular cuantos estudiantes aprobaron (calificacion >=60)
              F4:    Mostrar las calificaciones en orden ascendentes
-             F5:    Mostrar cuantos estudiantes obtuvieron calificaciones en los siguientes rangos
+             F5:    Mostrar cuantos estudiantes obtuvieron calificaciones en los siguientes rangos:
+                     * 0-59 (Reprobado)
+                     * 60-69 (Suficiente)
+                     * 70-79 (Bien)
+                     * 80-89 (Notable)
+                     * 90-100 (Excelente)
              */
+            int[] grades = { 45, 55,65,70,85,81,79,69,52,91};
+            int acum = SumElements(grades);
+            int gradeAverage = acum / grades.Length;
+            int least = leastElement(grades);
+            int biggest = biggestElement(grades);
+            int aprobados=approvedStudents(grades);
+            Console.WriteLine("========= Reto1: Sistemas de calificaciones ==============");
+            Console.WriteLine($"La nota promedio de los {grades.Length} es {gradeAverage}");
+            Console.WriteLine($"La nota más baja de la clase es de {least}");
+            Console.WriteLine($"La nota más alta de la clase es de {biggest}");
+            Console.WriteLine($"Cantidad de alumnos aprobados: " + aprobados);
+            ordenarArray(grades);
+            rangoAlumnos(grades);
+        }
 
+        public static int SumElements(int[] arrays)
+        {
+            int sum = 0;
+            foreach (int array in arrays)
+            {
+                sum += array;
+            }
+            return sum; 
+        }
 
+        public static int leastElement(int[] arrays)
+        {
+            int minimo = arrays[0];
+            for (int i = 1; i < arrays.Length; i++)
+            {
+                if (arrays[i] < minimo)
+                    minimo = arrays[i];
+            }
+            return minimo;
+        }
+        public static int biggestElement(int[] arrays)
+        {
+            int maximo = arrays[0];
+            for (int i = 1; i < arrays.Length; i++)
+            {
+                if (arrays[i] > maximo)
+                    maximo = arrays[i];
+            }
+            return maximo;
+        }
+        public static int approvedStudents(int[] arrays)
+        {
+            int cont = 0;
+            foreach (int array in arrays)
+            {
+                if (array >= 60)
+                {
+                    cont++;
+                }
+            }
+            return cont;
+        }
+        public static void ordenarArray(int[] arrays)
+        {
+            Array.Sort(arrays);
+            Console.Write("Notas ordenadas: ");
+            foreach (int array in arrays)
+                Console.Write($"{array} ");
+        }
+        public static void rangoAlumnos(int[] arrays)
+        {
+            int numReprobado = 0;
+            int numSuficiente = 0;
+            int numBien = 0;
+            int numNotable = 0;
+            int numExcelente = 0;
+
+            foreach (int array in arrays)
+            {
+                if (array < 60)
+                {
+                    numReprobado += 1;
+                }else if(array>=60 && array < 70)
+                {
+                    numSuficiente += 1;
+                }else if(array>=70 && array < 80)
+                {
+                    numBien += 1;  
+                }else if(array>=80 && array < 90)
+                {
+                    numNotable += 1;
+                }else if(array<=90 && array <= 100)
+                {
+                    numExcelente += 1;
+                }
+            }
+            Console.WriteLine("\nRango de notas de alumnos");
+            Console.WriteLine($"El numero de notas excelentes es {numExcelente}");
+            Console.WriteLine($"El numero de notas notables es {numNotable}");
+            Console.WriteLine($"El numero de notas bien es {numBien}");
+            Console.WriteLine($"El numero de notas suficientes es {numSuficiente}");
+            Console.WriteLine($"El numero de notas reprobadas es {numReprobado}");
         }
     }
 }
