@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week2_Collections_List", "W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week2_Collections_Dictionary", "Week2_Collections_Dictionary\Week2_Collections_Dictionary.csproj", "{17317388-549F-4EC5-B11C-24FD9A2922E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week2_Collections_HashSet", "Week2_Collections_HashSet\Week2_Collections_HashSet.csproj", "{31FBD327-F123-46E6-961E-E8B94C2CE2F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{17317388-549F-4EC5-B11C-24FD9A2922E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17317388-549F-4EC5-B11C-24FD9A2922E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17317388-549F-4EC5-B11C-24FD9A2922E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31FBD327-F123-46E6-961E-E8B94C2CE2F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31FBD327-F123-46E6-961E-E8B94C2CE2F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31FBD327-F123-46E6-961E-E8B94C2CE2F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31FBD327-F123-46E6-961E-E8B94C2CE2F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
