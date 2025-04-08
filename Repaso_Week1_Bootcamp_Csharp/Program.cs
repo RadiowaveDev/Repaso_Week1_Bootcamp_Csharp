@@ -118,6 +118,14 @@
                     break;
             }
 
+            int suma = Add(7, 13);
+            Console.WriteLine("Funcion suma static retorna "+suma);
+        }
+
+        public static int Add(int a, int b)
+        {
+            int result = a + b;
+            return result;
         }
     }
 }
