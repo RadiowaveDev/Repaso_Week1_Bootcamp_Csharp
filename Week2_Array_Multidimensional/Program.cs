@@ -1,11 +1,13 @@
-﻿namespace Week2_Array_Multidimensional
+﻿using System;
+
+namespace Week2_Array_Multidimensional
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("ARRAYS MULTIDIMENSIONALES EN C#");
-            Console.WriteLine("==============================\n");
+            Console.WriteLine("==============================");
 
             // 1. ARRAYS BIDIMENSIONALES (MATRICES)
             Console.WriteLine("1. Arrays Bidimensionales (Matrices):");
@@ -166,8 +168,8 @@
             - Permitir buscar días con temperatura superior o inferior a un valor introducido por el usuario
             */
 
-            Console.WriteLine("REGISTRO DE TEMPERATURAS SEMANALES");
-            Console.WriteLine("==================================\n");
+            Console.WriteLine("\nREGISTRO DE TEMPERATURAS SEMANALES");
+            Console.WriteLine("==================================");
 
             // 1. Declarar la matriz de temperaturas (4 semanas x 7 días)
             double[,] temperaturas = new double[4, 7];
@@ -179,22 +181,128 @@
             Console.Write("Elija una opción (1-2): ");
 
             int opcion;
+
             while (!int.TryParse(Console.ReadLine(), out opcion) || (opcion != 1 && opcion != 2))
             {
                 Console.Write("Por favor, introduzca 1 o 2: ");
             }
+            if (opcion == 1)
+            {
+                addTemperature(temperaturas);
+            }
+            else
+            {
+                generateTemperature(temperaturas);
+            }
 
-            Random r = new Random(100);
+            //3. Calcular y mostrar
+            Console.WriteLine("\n----------- Cálculos estadísticos: -----------");
+            averageWeeklyTemperature(temperaturas);
+            averageWeekDayTemperature(temperaturas);
+            extremeDays(temperaturas);
 
-            // 3. Llenar la matriz con datos
-            // if (opcion == 1)
-            // {
-            //     IntroducirTemperaturas(temperaturas);
-            // }
-            // else
-            // {
-            //     GenerarTemperaturasAleatorias(temperaturas);
-            // }
+            //4.Mostrar gráficamente la matriz de temperaturas con formato adecuado
+            Console.WriteLine("\n------- matriz Temperatura [4,7] ----------");
+            ShowArray(temperaturas);
+        }
+
+        static void addTemperature(double[,] array)
+        {
+            for(int i=0; i < array.GetLength(0); i++)
+            {
+                for(int j=0; j < array.GetLength(1); j++)
+                {
+                    Console.WriteLine($"Introduce el valor para la posición [{i},{j}]:");
+                    array[i,j] = Convert.ToDouble(Console.ReadLine());
+                }
+            }
+        }
+
+        static void generateTemperature(double[,] array)
+        {   
+            Random random = new Random();   
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    int valorEntero = random.Next(10, 35);
+                    array[i, j] = (double)valorEntero;
+                }
+            }
+        }
+
+        static void averageWeeklyTemperature(double[,] array) 
+        {
+            double[] sumWeek = { 0,0,0,0};
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    sumWeek[i] += array[i, j];
+                }
+            }
+            Console.WriteLine($"Temperatura promedio de semana 1: {sumWeek[0] / 4}");
+            Console.WriteLine($"Temperatura promedio de semana 2: {sumWeek[1] / 4}");
+            Console.WriteLine($"Temperatura promedio de semana 3: {sumWeek[2] / 4}");
+            Console.WriteLine($"Temperatura promedio de semana 4: {sumWeek[3] / 4}");
+        }
+
+        static void averageWeekDayTemperature(double[,] array)
+        {
+            double[] sumWeekDay = { 0, 0, 0, 0, 0, 0, 0 };
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    sumWeekDay[j] += array[i, j];
+                }
+            }
+            Console.WriteLine($"Temperatura promedio de los 4 lunes: {sumWeekDay[0] / 4}");
+            Console.WriteLine($"Temperatura promedio de los 4 martes: {sumWeekDay[1] / 4}");
+            Console.WriteLine($"Temperatura promedio de los 4 miercoles: {sumWeekDay[2] / 4}");
+            Console.WriteLine($"Temperatura promedio de los 4 jueves: {sumWeekDay[3] / 4}");
+            Console.WriteLine($"Temperatura promedio de los 4 viernes: {sumWeekDay[4] / 4}");
+            Console.WriteLine($"Temperatura promedio de los 4 sabado: {sumWeekDay[5] / 4}");
+            Console.WriteLine($"Temperatura promedio de los 4 domingo: {sumWeekDay[6] / 4}");
+        }
+
+        static void extremeDays(double[,] array)
+        {
+            int maxValueX = 0, maxValueY = 0;
+            int minValueX = 0, minValueY = 0; 
+            double maxValue = array[0,0];
+            double minValue = array[0,0];
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    if (maxValue <= array[i, j])
+                    {
+                        maxValue = array[i, j];
+                        maxValueX = i;
+                        maxValueY = j;
+                    }
+                    if (minValue >= array[i, j])
+                    {
+                        minValue = array[i, j];
+                        minValueX = i;
+                        minValueY = j;
+                    }
+                }
+            }
+            Console.WriteLine($"El temperatura más alta es {array[maxValueX, maxValueY]} - semana: {maxValueX+1} - dia: {maxValueY + 1}");
+            Console.WriteLine($"El temperatura más baja es {array[minValueX, minValueY]} - semana: {minValueX+1} - dia: {minValueY + 1}");
+        }
+        static void ShowArray(double[,] array)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    Console.Write($"{array[i, j]} ");
+                }
+                Console.WriteLine();
+            }
         }
 
         // Método auxiliar para mostrar una matriz 2x2
