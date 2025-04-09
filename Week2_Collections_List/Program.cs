@@ -118,7 +118,7 @@
             new Persona { Nombre = "Laura", Edad = 42, Dni  = "7163235" },
             new Persona { Nombre = "Miguel", Edad = 19, Dni  = "7163235" }
         };
-
+            
             // Find - Encontrar la primera persona menor de 18 años
             Persona menor = personas.Find(p => p.Edad < 18);
             Console.WriteLine($"Primera persona menor de edad: {menor.Nombre}, {menor.Edad} años");
@@ -132,6 +132,46 @@
             // FindIndex - Encontrar el índice de la primera persona que empieza con 'M'
             int indiceMLetra = personas.FindIndex(p => p.Nombre.StartsWith("M"));
             Console.WriteLine($"Índice de la primera persona con nombre que empieza por 'M': {indiceMLetra}");
+
+            // Operaciones del reto
+            // Crear la lista, agregar los valores y hacer las operaciones
+            List<Libro> libros = new List<Libro>
+            {
+                new Libro { Nombre="El pricipito", Precio= 10.9, Stock=30},
+                new Libro { Nombre="Eloquent JavaScript", Precio=9.9, Stock=15},
+                new Libro { Nombre="Clean Code", Precio=12.5, Stock=22},
+                new Libro { Nombre="Design Patterns", Precio=15.2, Stock=9},
+                new Libro { Nombre="SQL for Dummies", Precio=8.5, Stock=17},
+                new Libro { Nombre="Cloud Architecture", Precio=15.5, Stock=30},
+                new Libro { Nombre="El señor de los anillos", Precio=18.5, Stock=17},
+                new Libro { Nombre="El Hobbit", Precio=11.5, Stock=5},
+                new Libro { Nombre="Meditaciones", Precio=9.5, Stock=12},
+                new Libro { Nombre="Dracula", Precio=14.9, Stock=9}
+            };
+            // Filtrar los libros con stock de mas de 10 unidades
+            List<Libro> librosStockMayorA10 = libros.Where(l => l.Stock >10 ).ToList();
+            Console.WriteLine("\nFiltrado de libros con Stock mayor a 10");
+            foreach (var Libro in librosStockMayorA10)
+            {
+                Console.WriteLine($"Título: {Libro.Nombre} - Stock: {Libro.Stock}");
+            }
+            // Filtrar el stock por precio mas grande de 10.99 soles
+            List<Libro> librosPrecioMayorA11 = libros.Where(l => l.Precio > 10.99).ToList();
+            Console.WriteLine("\nFiltrado de libros con Precio mayor a 10.99");
+            foreach (var Libro in librosPrecioMayorA11)
+            {
+                Console.WriteLine($"Título: {Libro.Nombre} - Precio: {Libro.Precio}");
+            }
+            // Encontrar el indice del libro que empiece con "El"
+            int indiceLibroEl = libros.FindIndex(l => l.Nombre.StartsWith("El"));
+            if (indiceLibroEl != -1)
+            {
+                Console.WriteLine($"El libro cuyo nombre empieza con las letras 'El' se encuentra en el índice {indiceLibroEl} : {libros[indiceLibroEl]}");
+            }
+            else
+            {
+                Console.WriteLine("No se encuentra un libro cuyo nombre empiece con las letras 'El'");
+            }
         }
 
         // Clase auxiliar para demostraciones
@@ -141,6 +181,11 @@
             public int Edad { get; set; }
             public string Dni { get; set; }
         }
-    
+        class Libro
+        {
+            public string Nombre { get; set; }
+            public double Precio { get; set; }
+            public int Stock { get; set; }
+        }
     }
 }
