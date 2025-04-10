@@ -34,6 +34,7 @@
               * 1 2 3
               * 1 2 3 4
             */
+            Console.WriteLine("\n================");
             for (i = 0; i < 5; i++)
             {
                 for (j = 0; j <= i; j++)
@@ -50,6 +51,29 @@
                 }
                 Console.Write("\n");
             }
+            /* 
+                    * 
+                   * * 
+                  * * * 
+                 * * * *
+            */
+            int rows = 4;
+            Console.WriteLine("\n================");
+            for (i = 1; i <= rows; i++)
+            {
+                //bucle espacios 1<=(4-1)
+                for (j = 1; j <= filas-i; j++)
+                {
+                    Console.Write(" ");
+                }
+                //bucle * 1<=1, <=1
+                for (int k = 1; k <= i; k++)
+                {
+                    Console.Write("* ");
+                }
+                Console.Write("\n");
+            }
+
         }
     }
 }
