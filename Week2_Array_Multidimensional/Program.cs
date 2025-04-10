@@ -182,7 +182,7 @@ namespace Week2_Array_Multidimensional
 
             int opcion;
 
-            while (!int.TryParse(Console.ReadLine(), out opcion) || (opcion != 1 && opcion != 2))
+            while (!int.TryParse(Console.ReadLine(), out opcion) || (opcion != 1 && opcion != 2))   
             {
                 Console.Write("Por favor, introduzca 1 o 2: ");
             }

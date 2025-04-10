@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week2_Collections_HashSet",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week1_Switch_IfElse_Statement", "Week1_Switch_IfElse_Statement\Week1_Switch_IfElse_Statement.csproj", "{A83A8D0B-2C8C-4166-A6A9-14302D5AFE02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repaso_Modulo1", "Repaso_Modulo1\Repaso_Modulo1.csproj", "{FE415397-4832-4D96-9D1E-A3E43CA41320}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{A83A8D0B-2C8C-4166-A6A9-14302D5AFE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A83A8D0B-2C8C-4166-A6A9-14302D5AFE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A83A8D0B-2C8C-4166-A6A9-14302D5AFE02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE415397-4832-4D96-9D1E-A3E43CA41320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE415397-4832-4D96-9D1E-A3E43CA41320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE415397-4832-4D96-9D1E-A3E43CA41320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE415397-4832-4D96-9D1E-A3E43CA41320}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
